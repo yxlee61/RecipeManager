@@ -1,0 +1,20 @@
+﻿@model RecipeManager.Controllers.PdfModel
+
+@{
+    ViewBag.Title = "PdfStuff";
+}
+
+<h2>PdfStuff</h2>
+
+@foreach (var item in Model.dimensions)
+{
+  <div>@Html.DisplayFor(modelItem => item)</div><br/>
+}
+<br /><br /><br />
+<div>@Html.DisplayFor(model => model.text)</div>
+<br /><br /><br />
+<div>@Html.DisplayFor(model => model.text)</div>
+<br /><br /><br />
+<div>@Html.DisplayFor(model => model.layers)</div>
+<br /><br /><br />
+<div>End</div>

@@ -1,0 +1,40 @@
+﻿@model RecipeManager.Controllers.SearchModel
+@{
+  Func<RecipeManager.Models.Size, SelectListItem> sizeSelector = (x) => new SelectListItem() { Text = x.SizeName.ToString(), Value = x.SizeId.ToString() };
+}
+
+@using (Html.BeginForm("Display", "Recipe"))
+{
+  @Html.AntiForgeryToken()
+  <div id="sizes">
+    <div class="form-group">
+      <label for="sizeLabel" class="col-md-2 control-label">Size</label>
+      <div class="col-md-10">
+        @Html.DropDownList("sizeId", Model.sizes.Select(sizeSelector), htmlAttributes: new { @class = "form-control" })
+        @*@Html.DropDownListFor(x => x.sizes, new SelectList(Model.sizes, "SizeName", "SizeName"), htmlAttributes: new { @class = "form-control" })*@
+        @Html.ValidationMessageFor(x => x.sizes)
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="quantityLabel" class="col-md-2 control-label">Quantity</label>
+      <div class="col-md-10">
+        <input type="number" name="quantity" min="1" />
+      </div>
+    </div>
+    @*<div class="form-group">
+      <label for="packDate" class="col-md-2 control-label">Packed-on Date</label>
+      <div class="col-md-10">
+        <input type="date" name="packDate"/>
+      </div>
+    </div>*@
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Print" class="btn btn-default" />
+      </div>
+    </div>
+  </div>
+}
+
+@section Scripts {
+  @Scripts.Render("~/bundles/jqueryval")
+}

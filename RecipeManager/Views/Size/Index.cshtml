@@ -1,0 +1,141 @@
+﻿@model IEnumerable<RecipeManager.Models.Size>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Recipe.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Template)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Calories)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CaloriesFromFat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalFat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SaturatedFat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransFat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cholesterol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sodium)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalCarbs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fiber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sugars)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Protein)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VitaminA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VitaminC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Calcium)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Iron)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Recipe.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Template)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Calories)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaloriesFromFat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalFat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SaturatedFat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransFat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cholesterol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sodium)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalCarbs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fiber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sugars)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Protein)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VitaminA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VitaminC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Calcium)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Iron)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SizeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SizeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SizeId })
+        </td>
+    </tr>
+}
+
+</table>

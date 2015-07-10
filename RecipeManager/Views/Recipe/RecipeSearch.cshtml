@@ -1,0 +1,84 @@
+﻿@model IEnumerable<RecipeManager.Models.Recipe>
+
+<div id="searchresults">
+  <table class="table">
+    <tr>
+      <th>
+        @Html.DisplayNameFor(model => model.Name)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Type)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Ingredients)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Description)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.GlutenFree)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.LactoseFree)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.SoyFree)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Vegetarian)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Vegan)
+      </th>
+      <th>
+        Size
+      </th>
+      <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+      <tr>
+        <td>
+          @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Ingredients)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.GlutenFree)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.LactoseFree)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.SoyFree)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Vegetarian)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Vegan)
+        </td>
+        <td>
+          @foreach (var size in item.Sizes)
+          {
+            @Html.ActionLink(size.SizeName.ToString(), "Edit", "Size", new { id = size.SizeId }, null) <br />
+          }
+          @Html.ActionLink("Add size", "Create", "Size", new { id = item.RecipeId }, null)
+        </td>
+        <td>
+          @Html.ActionLink("Edit", "Edit", new { id = item.RecipeId }) <br />
+          @Html.ActionLink("Details", "Details", new { id = item.RecipeId }) <br />
+          @Html.ActionLink("Delete", "Delete", new { id = item.RecipeId })
+        </td>
+      </tr>
+    }
+  </table>
+</div>

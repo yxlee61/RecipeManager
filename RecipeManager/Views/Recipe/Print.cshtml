@@ -1,0 +1,48 @@
+﻿@model IEnumerable<RecipeManager.Models.Recipe>
+
+@{
+  ViewBag.Title = "Print";
+}
+
+<h2>Print</h2>
+
+<div><a href="@Url.Action("UrlAsPDF", "Recipe")">Download UrlAsPdf</a></div>
+@*<div><a href="@Url.Action("DownloadViewPDF", "Home")">Download ViewAsPdf</a></div>
+<div><a href="@Url.Action("DownloadActionAsPDF", "Home")">Download ActionAsPdf</a></div>
+<div><a href="@Url.Action("DownloadPartialViewPDF", "Home")">Download PartialViewAsPDF</a></div>*@
+
+<div class="panel panel-default">
+  <div class="panel-heading">Print form</div>
+  <div class="panel-body">
+    <div class="form-group">
+      <label for="searchLabel" class="col-sm-2 control-label">Search by Name</label>
+      <div class="col-sm-10">
+        @using (Ajax.BeginForm("SizeSearch", "Recipe",
+      new AjaxOptions
+      {
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "GET",
+        OnFailure = "searchFailed",
+        LoadingElementId = "ajax-loader",
+        UpdateTargetId = "sizes",
+      }))
+        {
+          <input type="text" name="q"  data-autocomplete-source="@Url.Action("QuickSearch", "Recipe")" />
+          <input type="submit" value="Search" />
+          <img id="ajax-loader"
+               src="@Url.Content("~/Content/themes/base/images/ajax-loader.gif")"
+               style="display:none" />
+        }
+
+      </div>
+      <br />
+      <div id="sizes"></div>
+    </div>
+    </div>
+</div>
+
+
+@section Scripts {
+  <script src="~/Scripts/App/AppScript.js"> </script>
+  <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}
