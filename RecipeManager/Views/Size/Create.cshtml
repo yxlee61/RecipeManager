@@ -15,7 +15,8 @@
     <h4>Size</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @*@Html.HiddenFor(model => model.RecipeId)*@
+    @Html.HiddenFor(model => model.SizeId)
+
     <div class="form-group">
       @Html.LabelFor(model => model.RecipeId, "RecipeId", htmlAttributes: new { @class = "control-label col-md-2" })
       <div class="col-md-10">
@@ -177,7 +178,8 @@
 }
 
 <div>
-  @Html.ActionLink("Back to List", "Index", "Recipe", new { id = Model.RecipeId }, null)
+  @*@Html.ActionLink("Back to List", "Index", "Recipe", new { id = @ViewData["RecipeID"]}, null)*@
+  @Html.ActionLink("Back to List", "Index", "Recipe")
 </div>
 
 @section Scripts {

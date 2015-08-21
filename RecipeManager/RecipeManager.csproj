@@ -175,12 +175,20 @@
     <Compile Include="Helpers\LabelProperties.cs" />
     <Compile Include="Helpers\PdfHelper.cs" />
     <Compile Include="Helpers\TextWithFontExtractionStrategy.cs" />
+    <Compile Include="Migrations\201507021800207_InitialCreate.cs" />
+    <Compile Include="Migrations\201507021800207_InitialCreate.Designer.cs">
+      <DependentUpon>201507021800207_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508211507501_AddingRecipeType.cs" />
+    <Compile Include="Migrations\201508211507501_AddingRecipeType.Designer.cs">
+      <DependentUpon>201508211507501_AddingRecipeType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Models\RecipeDbContext.cs" />
-    <Compile Include="Models\RecipeInitializer.cs" />
     <Compile Include="Models\Size.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -310,6 +318,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201507021800207_InitialCreate.resx">
+      <DependentUpon>201507021800207_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508211507501_AddingRecipeType.resx">
+      <DependentUpon>201508211507501_AddingRecipeType.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -42,6 +42,7 @@ namespace RecipeManager.Controllers
       var recipes = db.Recipes.ToList();
       var sel = new SelectList(recipes, "RecipeId", "Name", RecipeID);
       ViewBag.RecipeId = sel;
+      //ViewData["RecipeID"] = RecipeID;
       return View();
     }
 

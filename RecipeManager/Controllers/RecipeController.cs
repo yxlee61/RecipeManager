@@ -174,8 +174,8 @@ namespace RecipeManager.Controllers
 
     public ActionResult PdfStuff()
     {
-      string file = "C:\\Users\\Yan Xin\\documents\\visual studio 2013\\Projects\\RecipeManager\\RecipeManager\\Test\\label1.pdf";
-      string outfile = "C:\\Users\\Yan Xin\\documents\\visual studio 2013\\Projects\\RecipeManager\\RecipeManager\\Test\\label1-empty.pdf";
+      string file = "E://Code//RecipeManager//RecipeManager//Test//label1.pdf";
+      string outfile = "E://Code//RecipeManager//RecipeManager//Test//label1-empty.pdf";
 
       //Helpers.PdfHelper.ResetBackgroundColor(file, outfile, "white");
       double[] dimensions = Helpers.EmptyLabelGenerator.CreateEmptyLabel(file, outfile);

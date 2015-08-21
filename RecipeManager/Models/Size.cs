@@ -20,6 +20,8 @@ namespace RecipeManager.Models
   public class Size
   {
     public int SizeId { get; set; }
+
+    [Display(Name = "Recipe Name")]
     public int RecipeId { get; set; }
 
     [Display(Name = "Size Name")]

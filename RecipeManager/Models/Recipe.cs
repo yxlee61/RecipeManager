@@ -6,11 +6,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RecipeManager.Models
 {
+
+  public enum RecipeType
+  {
+    Meal,Snack,Wrap,Salad
+  }
+
   public class Recipe
   {
     public int RecipeId { get; set; }
     public string Name { get; set; }
-    public string Type { get; set; }
+
+    [Display(Name = "Type")]
+    public RecipeType RecipeType { get; set; }
 
     [DataType(DataType.MultilineText)]
     public string Ingredients { get; set; }
